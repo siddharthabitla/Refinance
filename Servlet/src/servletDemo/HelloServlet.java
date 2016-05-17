@@ -25,7 +25,6 @@ public class HelloServlet extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 	  PrintWriter out = response.getWriter();
 	  out.println("Hello World");
 	}  // service()
