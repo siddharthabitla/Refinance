@@ -9,11 +9,19 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <context-param>
+    <param-name>company</param-name>
+    <param-value>SidHub</param-value>
+  </context-param>
   <servlet>
     <description></description>
     <display-name>HelloServlet</display-name>
     <servlet-name>HelloServlet</servlet-name>
     <servlet-class>servletDemo.HelloServlet</servlet-class>
+    <init-param>
+      <param-name>fname</param-name>
+      <param-value>Siddhartha</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
@@ -28,5 +36,55 @@
   <servlet-mapping>
     <servlet-name>ReadFormServlet</servlet-name>
     <url-pattern>/ReadFormServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Servlet1</display-name>
+    <servlet-name>Servlet1</servlet-name>
+    <servlet-class>servletDemo.Servlet1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet1</servlet-name>
+    <url-pattern>/Servlet1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Servlet2</display-name>
+    <servlet-name>Servlet2</servlet-name>
+    <servlet-class>servletDemo.Servlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Servlet2</servlet-name>
+    <url-pattern>/Servlet2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>servletDemo.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegistrationServlet</display-name>
+    <servlet-name>RegistrationServlet</servlet-name>
+    <servlet-class>servletDemo.RegistrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrationServlet</servlet-name>
+    <url-pattern>/RegistrationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DisplayEmpServlet</display-name>
+    <servlet-name>DisplayEmpServlet</servlet-name>
+    <servlet-class>servletDemo.DisplayEmpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayEmpServlet</servlet-name>
+    <url-pattern>/DisplayEmpServlet</url-pattern>
   </servlet-mapping>
 </web-app>

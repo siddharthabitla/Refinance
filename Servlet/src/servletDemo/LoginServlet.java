@@ -3,40 +3,39 @@ package servletDemo;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HelloServlet
+ * Servlet implementation class LoginServlet
  */
-public class HelloServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public HelloServlet() {
+    public LoginServlet() {
+        super();
         // TODO Auto-generated constructor stub
-    }  // HelloServlet()
+    }
 
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  PrintWriter out = response.getWriter();
-	  //out.println("Hello World");
+	  String uname = request.getParameter("uname");
+	  String pass = request.getParameter("pass");
+	  if (uname.equalsIgnoreCase(pass)) {
+	    //request.getRequestDispatcher("success.html").forward(request, response);
+	    response.sendRedirect("success.html");
+	  } else {
+	    //request.getRequestDispatcher("login.html").forward(request, response);
+	    response.sendRedirect("login.html");
+	  }
+	}
 
-	  ServletConfig config = getServletConfig();
-	  String fname = config.getInitParameter("fname");
-	  out.println(fname);
-	  
-	  ServletContext context = getServletContext();
-	  String company = context.getInitParameter("company");
-	  out.println(company);
-	}  // service()
-
-}  // HelloServlet
+}

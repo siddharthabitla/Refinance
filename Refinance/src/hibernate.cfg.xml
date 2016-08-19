@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/refinance</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">vasistha</property>
+
+		<!-- JDBC Connection Pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+
+		<!-- Disable second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- Auto-commit -->
+		<property name="connection.autocommit">true</property>
+
+		<!-- Class mapping -->
+		<mapping class="com.slokam.Entity.UserPojo" />
+		<mapping class="com.slokam.Entity.MailingAddrPojo" />
+		<mapping class="com.slokam.Entity.PhysicalAddressPojo" />
+		<mapping class="com.slokam.Entity.SSNPojo" />
+
+	</session-factory>
+</hibernate-configuration>
